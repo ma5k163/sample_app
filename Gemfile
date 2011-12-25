@@ -8,8 +8,10 @@ gem 'rails', '3.1.3'
 gem 'sqlite3'
 gem 'gravatar_image_tag', '1.0.0.pre2'
 #gem 'pg'
+gem	'will_paginate','3.0.2'
 
 group :development do
+  gem 'faker', '0.3.1'
   gem 'rspec-rails'
   gem 'annotate',:git => 'git://github.com/ctran/annotate_models.git'
 end
@@ -18,7 +20,7 @@ group :test do
   gem 'rspec-rails'
   gem 'webrat'
   gem 'spork'
-  gem 'factory_girl_rails','1.0'
+  gem 'factory_girl_rails'
 end
 
 

@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
     else
       # Sign the user in and redirect to the user's show page.
       sign_in user
-      redirect_to user
+      redirect_back_or user
     end
   end
 
@@ -23,22 +23,8 @@ class SessionsController < ApplicationController
     redirect_to root_path
   end
 
-  def current_user=(user)
-    @current_user = user
-  end
 
-  def current_user
-    @current_user ||= user_from_remember_token
-  end
 
-  private
-    
-    def user_from_remember_token
-      User.authenticate_with_salt(*remember_token)
-    end
-
-    def remember_token
-      cookies.signed[:remember_token] || [nil,nil]
-    end
 
 end
+
